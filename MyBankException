@@ -1,0 +1,28 @@
+package cSEN2403_Lab03;
+
+public class MyBankException {
+public static void main(String[] args) throws MyException {
+	System.out.println("Welcome...");
+	int balance=500, withdraw=1000;
+	try {
+		if(balance<withdraw)
+			throw new MyException("Insufficient funds");
+		else
+			System.out.println("please withdraw");
+	}
+	catch (MyException e) {
+		System.out.println("Exception caught:" +e);
+			
+	}
+	System.out.println("Goodbye...");
+}
+}
+class MyException extends Exception {
+	MyException(){
+		
+	}
+	MyException(String msg){
+		System.out.println("MyException defined by me..." +msg);
+
+	}
+}
